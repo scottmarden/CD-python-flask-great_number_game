@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Great Number Game</title>
+		<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename="css/style.css")}}" />
+		<script type="text/javascript" src="{{ url_for('static', filename="js/script.js")}}"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	</head>
+	<body>
+		<div id="wrapper">
+			<h1>Welcome to the Great Number Game!</h1>
+			<h3>I am thinking of a number between 1 and 100</h3>
+			<div class="response">
+				<h2 id= {{marker}} >{{ response }}</h2>
+			</div>
+			<div class= {{ guess_class }} >
+				<form action='/guess' method='post'>
+					<input type="text" name="guess" />
+					<input type="submit" name="submit" value="Guess!" />
+				</form>
+			</div>
+			<div class= {{ reset_class }} >
+				<form action='/reset' method='post'>
+					<input type="submit" name="reset" value="Play Again!" />
+				</form>
+			</div>
+		</div>
+	</body>
